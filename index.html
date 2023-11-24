@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $(".buttons").click(function(){
+                var filter = $(this).attr("data-filter")
+                if(filter == "all"){
+                    $(".box").show(400);
+                }else{
+                    $(".box").not("."+filter).hide(200);
+                    $(".box").filter("."+filter).show(400);
+                }
+            });
+        });
+            $(".dropdowncontent").hide();
+            $(".drop").click(function(){
+                $(this).next(".dropdowncontent").slideToggle("slow");
+            });
+    </script>
+</head>
+<body>
+    <div class="navbar" id="myNavbar">
+        <div class="sidebar">
+            <div class="exit" onclick=hideSidebar()>
+                <a href="#">
+                <i class='bx bx-x'></i>            
+                </a>
+            </div>
+
+            <div class="dropdown">
+                <button class="drop">Home</button>
+            </div>
+    
+            <div class="dropdown">
+                <button class="drop">Restaurants
+                    <i class='bx bxs-down-arrow'></i>
+                </button>
+                <div class="dropdowncontent">
+                    <a href="#">Local Indonesian</a>
+                    <a href="#">Western</a>
+                    <a href="#">Asian</a>
+                </div>
+            </div>
+    
+            <div class="dropdown">
+                <button class="drop">Recipes
+                    <i class='bx bxs-down-arrow'></i>
+                </button>
+                <div class="dropdowncontent">
+                    <a href="#">Local Indonesian</a>
+                    <a href="#">Western</a>
+                    <a href="#">Asian</a>
+                </div>
+            </div>
+    
+            <div class="dropdown">
+                <button class="drop">Today's Pick
+                    <i class='bx bxs-down-arrow'></i>
+                </button>
+                <div class="dropdowncontent">
+                    <a href="#">Breakfast</a>
+                    <a href="#">Lunch</a>
+                    <a href="#">Dinner</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home">
+            <div class="dropdown">
+                <button class="drop">Home</button>
+            </div>
+
+            <div class="dropdown">
+                <button class="drop">Restaurants
+                    <i class='bx bxs-down-arrow'></i>
+                </button>
+                <div class="dropdowncontent">
+                    <a href="#">Local Indonesian</a>
+                    <a href="#">Western</a>
+                    <a href="#">Asian</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="drop">Recipes
+                    <i class='bx bxs-down-arrow'></i>
+                </button>
+                <div class="dropdowncontent">
+                    <a href="#">Local Indonesian</a>
+                    <a href="#">Western</a>
+                    <a href="#">Asian</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="drop">Today's Pick
+                    <i class='bx bxs-down-arrow'></i>
+                </button>
+                <div class="dropdowncontent">
+                    <a href="#">Breakfast</a>
+                    <a href="#">Lunch</a>
+                    <a href="#">Dinner</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu" onclick=showSidebar()>
+            <a href="#">
+            <i class='bx bx-menu'></i>
+            </a>
+        </div>
+    </div>
+
+    <h1>Recipes</h1>
+
+    <div class="gallery">
+        <ul class="controls">
+            <li class="buttons" data-filter="all">All</li>
+            <li class="buttons" data-filter="local">Local</li>
+            <li class="buttons" data-filter="western">Western</li>
+            <li class="buttons" data-filter="asian">Asian</li>
+        </ul>
+
+        <div class="image-container">
+            <div class="box local">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image local">
+                    <img src="https://img.jakpost.net/c/2016/06/24/2016_06_24_7079_1466755385._large.jpg" alt="Nasi Goreng">
+                    <h2>Nasi Goreng</h2>
+                </a>
+            </div>
+
+            <div class="box local">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image local">
+                    <img src="https://lemang.sg/wp-content/uploads/2021/03/IMG_2536-1536x1024.jpg" alt="Rendang">
+                    <h2>Rendang</h2>
+                </a>
+            </div>
+
+            <div class="box local">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image local">
+                    <img src="https://th.bing.com/th/id/OIP.N8fZUtvyj-lnku96Gq8sGgHaHV?rs=1&pid=ImgDetMain" alt="Soto Ayam">
+                    <h2>Soto Ayam</h2>
+                </a>
+            </div>
+
+            <div class="box western">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image western">
+                    <img src="https://simply-delicious-food.com/wp-content/uploads/2019/09/Shrimp-Aglio-Olio-4.jpg" alt="Aglio Olio">
+                    <h2>Aglio Olio</h2>
+                </a>
+            </div>
+
+            <div class="box western">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image western">
+                    <img src="https://th.bing.com/th/id/OIP.F9Y4YHOopDpOBF6KZ62JHAHaJ4?rs=1&pid=ImgDetMain" alt="3 Pan Seared Salmon with Asparagus">
+                    <h2>Pan Seared Salmon with Asparagus</h2>
+                </a>
+            </div>
+
+            <div class="box western">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image western">
+                    <img src="https://thestayathomechef.com/wp-content/uploads/2017/08/Most-Amazing-Lasagna-2.jpg" alt="Lasagna">
+                    <h2>Lasagna</h2>
+                </a>
+            </div>
+
+            <div class="box asian">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image asian">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5c73710f3560c33b4d0b3f69/1584705094682-G8GZ411QJP424T4XAZCR/Japanese+sushi+set.jpeg?format=500w" alt="Sushi">
+                    <h2>Sushi</h2>
+                </a>
+            </div>
+
+            <div class="box asian">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image asian">
+                    <img src="https://th.bing.com/th/id/OIP.KoxDguzaHlKCWcVvzpZSfQHaHa?rs=1&pid=ImgDetMain" alt="Chicken Ramen">
+                    <h2>Chicken Ramen</h2>
+                </a>
+            </div>
+
+            <div class="box asian">
+                <a href="https://vionadjunaidy.github.io/HCI-Project-Restaurant-Page-Prototype/" class="image asian">
+                    <img src="https://static.thehoneycombers.com/wp-content/uploads/sites/2/2019/09/xiao-long-bao-singapore.png" alt="Xiao Long Bao">
+                    <h2>Xiao Long Bao</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+</body>
+</html>
